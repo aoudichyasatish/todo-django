@@ -1,31 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class='my-5'>
-    <h1 class='text-center'>Todo App📝</h1>
-</div>
-<div class='container todo_div'>
-    <div class='row'>
-        <div class='col-md-6 col-10 mx-auto'>
-            <form method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                        <input name="task" class="form-control" type="text" placeholder="{{ todo.task }}" value="{{ todo.task }}" autocomplete="off">
-                        <button type="submit" class="btn btn-secondary">Edit Todo</button>
-                </div>
-            </form>
-            <ul class="list-group my-5">
-                {% for todo in todos %}
-                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                    {{ todo.task }}
-                    <div>
-                    <a class="btn btn-secondary" href="{% url 'edit' todo.id %}">✏</a>
-                    <a class="btn btn-danger" href="{% url 'delete' todo.id %}">🗑️</a>
-                    </div>
-                </li>
-                {% endfor %}
-            </ul>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+                <input name="task" class="form-control" type="text" placeholder="{{ todo.task }}" value="{{ todo.task }}" autocomplete="off">
+                <button type="submit" class="btn btn-secondary">Edit</button>
         </div>
-    </div>
-</div>
+    </form>
 {% endblock %}
