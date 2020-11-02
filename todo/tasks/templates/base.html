@@ -7,7 +7,27 @@
 	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+	<div class='my-5'>
+    	<h1 class='text-center'>Todo App📝</h1>
+	</div>
+	<div class='container todo_div'>
+		<div class='row'>
+			<div class='col-md-6 col-10 mx-auto'>
+				{% block content %}
+				{% endblock %}
+				<ul class="list-group my-5">
+					{% for todo in todos %}
+						<li class="list-group-item d-flex justify-content-between align-items-center">
+						{{ todo.task }}
+						<div>
+						<a class="btn btn-secondary" href="{% url 'edit' todo.id %}">✏</a>
+						<a class="btn btn-danger" href="{% url 'delete' todo.id %}">🗑️</a>
+						</div>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+    	</div>
+	</div>
 </body>
 </html>
