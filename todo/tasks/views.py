@@ -28,7 +28,6 @@ def edit(request, todo_id):
  
 		if form.is_valid():
 			form.save()
-			messages.success(request, ('Task has been edited!'))
 			return redirect('index')
 	else:
 		todo = Todo.objects.get(id=todo_id)
