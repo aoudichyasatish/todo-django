@@ -1,5 +1,7 @@
 # Todo-App with Django & Bootstrap
 
+![](demo.gif)
+
 ## Setup
 
 ### Install Django:
