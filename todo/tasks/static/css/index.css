@@ -1,0 +1,10 @@
+.todo_div .form-control  {
+	display: inline;
+	margin-left: 60px;
+	padding-top: 1px;
+	width: 60%;
+}
+
+.todo_div > li {
+  list-style-type: none;
+}
